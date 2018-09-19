@@ -3,6 +3,7 @@ package com.example.thanh.android_project_mob204;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void showBottomNavigation(View view) {
 
+        Log.e("showBottomNavigation","showBottomNavigation");
+
         String username = edtUserName.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
 
@@ -55,12 +58,16 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, BottomNavigationBar.class);
                 startActivity(intent);
 
+            }else {
+
+                Toast.makeText(LoginActivity.this, getString(R.string.notify_wrong_username_password), Toast.LENGTH_LONG).show();
+
             }
 
-        // neu user == null, user ko co trong co so du lieu thi thong bao sai username or password
+            // neu user == null, user ko co trong co so du lieu thi thong bao sai username or password
         } else {
 
-            Toast.makeText(this, getString(R.string.notify_wrong_username_password), Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, getString(R.string.notify_wrong_username_password), Toast.LENGTH_LONG).show();
 
         }
 
