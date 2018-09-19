@@ -9,4 +9,5 @@
     <string name="dangky"><u>Do not have an account?</u></string>
     <string name="title"><u>Title</u></string>
     <string name="content">Born là một bí ẩn trong văn học mạng, người ta chỉ biết đến cô qua khối lượng tác phẩm khá lớn đã được in thành sách.</string>
+    <string name="notify_wrong_username_password">Wrong Username or Password. Please tell me why!!!</string>
 </resources>

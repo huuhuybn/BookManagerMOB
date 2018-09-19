@@ -30,6 +30,7 @@
         app:counterMaxLength="300"
         android:textColorHint="#dadad8">
         <EditText
+            android:id="@+id/edtUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your phone number or email"
@@ -45,6 +46,7 @@
 
         <EditText
             style="@style/colorText"
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -61,6 +63,7 @@
         android:layout_gravity="left"/>
     <Button
         style="@style/colorText"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
