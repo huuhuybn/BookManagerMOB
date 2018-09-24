@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".WelcomeActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeAct"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,20 +23,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".HomeAct"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ListUserAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_list_user"
             android:parentActivityName=".HomeAct"
-            android:theme="@style/FullscreenTheme">
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.thanh.android_project_mob204.HomeAct" />
+        </activity>
+        <activity
+            android:name=".ActAddUser"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_add_user"
+            android:parentActivityName=".ListUserAct"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thanh.android_project_mob204.ListUserAct" />
         </activity>
     </application>
 

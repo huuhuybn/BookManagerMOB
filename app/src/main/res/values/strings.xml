@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android_Project_MOB204</string>
+    <string name="app_name">Book Manager</string>
     <string name="welcome">Welcome to</string>
     <string name="nameStore">PHUONG NAM BOOK STORE</string>
     <string name="forgot"><u>Forgot your password?</u></string>
@@ -11,7 +11,16 @@
     <string name="content">Born là một bí ẩn trong văn học mạng, người ta chỉ biết đến cô qua khối lượng tác phẩm khá lớn đã được in thành sách.</string>
     <string name="notify_wrong_username_password">Wrong Username or Password. Please tell me why!!!</string>
 
-    <string name="title_activity_list_user">ListUserAct</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!--List User Act-->
+
+    <string name="title_activity_list_user">List User</string>
+    <string name="tv_no_user">No User!!!!</string>
+    <string name="tv_add_user">Add User</string>
+
+
+    <!--Add User Act-->
+    <string name="title_activity_add_user">Add User</string>
+
+
 </resources>

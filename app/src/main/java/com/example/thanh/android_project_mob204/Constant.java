@@ -4,6 +4,11 @@ public interface Constant {
 
 
 
+    // result Code
+
+
+    int ADD_USER = 8888;
+
     // User Table
 
     // ----------------------------------------
