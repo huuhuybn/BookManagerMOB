@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.thanh.android_project_mob204.database.DatabaseHelper;
 import com.example.thanh.android_project_mob204.model.User;
+import com.example.thanh.android_project_mob204.sqlitedao.UserDAO;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edtUserName;
     private EditText edtPassword;
-    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         initViews();
         databaseHelper = new DatabaseHelper(this);
 
+
     }
 
     public void initViews() {
@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
 
         edtUserName = findViewById(R.id.edtUserName);
         edtPassword = findViewById(R.id.edtPassword);
-        btnLogin = findViewById(R.id.btnLogin);
 
     }
 
@@ -47,7 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         String username = edtUserName.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
 
-        User user = databaseHelper.getUser(username);
+        UserDAO userDAO = new UserDAO(databaseHelper);
+        User user = userDAO.getUser(username);
 
         // neu user 1=null, tuc la user nay co ton tai trong DB. thi tien hanh so sanh password
         if (user != null) {
@@ -55,9 +55,11 @@ public class LoginActivity extends AppCompatActivity {
             String originalPassword = user.getPassword();
             if (originalPassword.equals(password)) {
 
-                Intent intent = new Intent(LoginActivity.this, BottomNavigationBar.class);
+                Intent intent = new Intent(LoginActivity.this, HomeAct.class);
                 startActivity(intent);
 
+
+                // neu mat khau sai thi thong bao
             }else {
 
                 Toast.makeText(LoginActivity.this, getString(R.string.notify_wrong_username_password), Toast.LENGTH_LONG).show();

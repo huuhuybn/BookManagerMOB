@@ -17,9 +17,9 @@
         android:icon="@drawable/invoice"
         android:title="Invoice"
         app:showAsAction="always"/>
-    <item android:id="@+id/more"
+    <item android:id="@+id/user"
         android:icon="@drawable/more"
-        android:title="More"
+        android:title="User"
         app:showAsAction="always"/>
 
 </menu>

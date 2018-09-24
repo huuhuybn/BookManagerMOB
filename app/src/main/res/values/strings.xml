@@ -10,4 +10,8 @@
     <string name="title"><u>Title</u></string>
     <string name="content">Born là một bí ẩn trong văn học mạng, người ta chỉ biết đến cô qua khối lượng tác phẩm khá lớn đã được in thành sách.</string>
     <string name="notify_wrong_username_password">Wrong Username or Password. Please tell me why!!!</string>
+
+    <string name="title_activity_list_user">ListUserAct</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

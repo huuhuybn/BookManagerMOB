@@ -1,5 +1,6 @@
 package com.example.thanh.android_project_mob204;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,7 @@ import com.example.thanh.android_project_mob204.fragment.InvoiceFragment;
 import com.example.thanh.android_project_mob204.fragment.LibraryFragment;
 import com.example.thanh.android_project_mob204.fragment.StatisticsFragment;
 
-public class BottomNavigationBar extends AppCompatActivity {
+public class HomeAct extends AppCompatActivity {
     private BottomNavigationView btnav;
     private BookFragment bookFragment;
     private InvoiceFragment invoiceFragment;
@@ -45,6 +46,9 @@ public class BottomNavigationBar extends AppCompatActivity {
                         return true;
                     case R.id.invoice:
                         showFragment(invoiceFragment);
+                        return true;
+                    case R.id.user:
+                        startActivity(new Intent(HomeAct.this,ListUserAct.class));
                         return true;
                 }
                 return false;

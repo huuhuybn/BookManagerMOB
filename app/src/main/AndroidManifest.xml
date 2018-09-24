@@ -20,8 +20,18 @@
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BottomNavigationBar"
+            android:name=".HomeAct"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListUserAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_list_user"
+            android:parentActivityName=".HomeAct"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thanh.android_project_mob204.HomeAct" />
+        </activity>
     </application>
 
 </manifest>

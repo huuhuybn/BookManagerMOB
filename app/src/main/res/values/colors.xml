@@ -6,4 +6,6 @@
     <color name="colorBackground">#212121</color>
     <color name="colorChecked">#FFFFFF</color>
     <color name="colorUncheked">#95989A</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
