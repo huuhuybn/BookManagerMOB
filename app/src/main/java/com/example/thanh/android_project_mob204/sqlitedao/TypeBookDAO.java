@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.example.thanh.android_project_mob204.Constant;
 import com.example.thanh.android_project_mob204.database.DatabaseHelper;
-import com.example.thanh.android_project_mob204.model.User;
+
 
 import java.util.ArrayList;
 import java.util.List;
