@@ -27,6 +27,11 @@ public class LoginActivity extends AppCompatActivity {
         initViews();
         databaseHelper = new DatabaseHelper(this);
 
+        UserDAO userDAO = new UserDAO(databaseHelper);
+
+        User user =  new User("admin","admin123",
+                "HUY","0919030190");
+        userDAO.insertUser(user);
 
     }
 

@@ -3,7 +3,6 @@ package com.example.thanh.android_project_mob204;
 public interface Constant {
 
 
-
     // result Code
 
 
@@ -33,7 +32,27 @@ public interface Constant {
             + ")";
 
     // ----------------------------------------
-    // BOOK TABLE
+    // TYPE  BOOK TABLE
+    // CREATE TABLE TypeBook (MaTheLoai CHAR(5) PRIMARY KEY NOT NULL,
+    // TypeName NVARCHAR(50) NOT NULL,
+    //  Description NVARCHAR(255),
+    // Position  INT
+    // )
+
+
+    String TABLE_TYPE_BOOK = "TypeBook";
+
+    String TB_COLUMN_ID = "MaTheLoai";
+    String TB_COLUMN_NAME = "TypeName";
+    String TB_COLUMN_DESCRIPTION = "Description";
+    String TB_COLUMN_POSITION = "Position";
+
+    String CREATE_TABLE_TYPE_BOOK = "CREATE TABLE " + TABLE_TYPE_BOOK + "(" +
+            "" + TB_COLUMN_ID + " CHAR(5) PRIMARY KEY NOT NULL," +
+            "" + TB_COLUMN_NAME + " NVARCHAR(50) NOT NULL," +
+            "" + TB_COLUMN_DESCRIPTION + " NVARCHAR(255)," +
+            "" + TB_COLUMN_POSITION + " INT" +
+            ")";
 
 
 
