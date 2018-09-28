@@ -9,6 +9,7 @@ import com.example.thanh.android_project_mob204.Constant;
 import com.example.thanh.android_project_mob204.database.DatabaseHelper;
 import com.example.thanh.android_project_mob204.model.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TypeBookDAO implements Constant {
@@ -52,27 +53,79 @@ public class TypeBookDAO implements Constant {
         return result;
     }
 
-    public long updateTypeBook() {
+    public long updateTypeBook(TypeBook typeBook) {
+
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+
+        //  Tao doi tuong de truyen du lieu la ContentValues
+        ContentValues contentValues = new ContentValues();
+
+        // Dua gia tri tuong ung tu User vao ContentValues
+        contentValues.put(TB_COLUMN_ID, typeBook.id);
+
+        contentValues.put(TB_COLUMN_NAME, typeBook.name);
+
+        contentValues.put(TB_COLUMN_DESCRIPTION, typeBook.description);
+
+        contentValues.put(TB_COLUMN_POSITION, typeBook.position);
 
 
-        return -1;
+        // updating row
+        long result =  db.update(TABLE_TYPE_BOOK, contentValues, TB_COLUMN_ID + " = ?",
+                new String[]{String.valueOf(typeBook.id)});
+
+
+        return result;
     }
 
 
-    public long deleteTypeBook() {
-
-
-        return -1;
+    public long deleteTypeBook(String typeBookID) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        long result = db.delete(TABLE_TYPE_BOOK, TB_COLUMN_ID + " = ?",
+                new String[]{String.valueOf(typeBookID)});
+        db.close();
+        return result;
     }
 
 
     public List<TypeBook> getAllTypeBooks() {
 
 
-        return null;
+        List<TypeBook> typeBooks = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+
+        // viet cau lenh truy can toan bo danh sach user;
+        String SELECT_ALL_TYPE_BOOKS = "SELECT * FROM " + TABLE_TYPE_BOOK;
+
+        // cursor la doi tuong de chua ket qua truy van
+        Cursor cursor = sqLiteDatabase.rawQuery(SELECT_ALL_TYPE_BOOKS, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                String typeId = cursor.getString(cursor.getColumnIndex(TB_COLUMN_ID));
+                String name = cursor.getString(cursor.getColumnIndex(TB_COLUMN_NAME));
+                String description = cursor.getString(cursor.getColumnIndex(TB_COLUMN_DESCRIPTION));
+                String position = cursor.getString(cursor.getColumnIndex(TB_COLUMN_POSITION));
+
+                TypeBook typeBook = new TypeBook();
+
+                typeBook.id = typeId;
+                typeBook.name = name;
+                typeBook.description = description;
+                typeBook.position = position;
+
+                typeBooks.add(typeBook);
+
+
+            } while (cursor.moveToNext());
+
+        }
+
+        return typeBooks;
     }
 
-    public TypeBook getTypeBookByID(String id){
+    public TypeBook getTypeBookByID(String id) {
 
         TypeBook typeBook = null;
 
