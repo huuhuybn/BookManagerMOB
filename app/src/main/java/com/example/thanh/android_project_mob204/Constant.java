@@ -55,6 +55,20 @@ public interface Constant {
             ")";
 
 
+    // TABLE INVOICE
+
+    // CREATE TABLE Invoice (MaHoaDon NCHAR(7) PRIMARY KEY NOT NULL, NgayMua LONG NOT NULL)
+
+    String INVOICE_TABLE = "Invoice";
+
+    String I_COLUMN_ID = "MaHoaDon";
+    String I_COLUMN_DATE = "NgayMua";
+
+    String CREATE_INVOICE_TABLE = "CREATE TABLE " + INVOICE_TABLE + "(" +
+            "" + I_COLUMN_ID + " NCHAR(7) PRIMARY KEY NOT NULL," +
+            "" + I_COLUMN_DATE + " LONG NOT NULL" +
+            ")";
+
 
 
 }

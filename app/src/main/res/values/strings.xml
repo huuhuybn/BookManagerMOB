@@ -21,6 +21,7 @@
 
     <!--Add User Act-->
     <string name="title_activity_add_user">Add User</string>
+    <string name="title_add_invoice">Create Invoice</string>
 
 
 </resources>

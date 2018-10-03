@@ -16,11 +16,9 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper implements Constant {
 
 
-
     public DatabaseHelper(Context context) {
         super(context, "bookmanager", null, 1);
     }
-
 
 
     @Override
@@ -28,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Constant {
 
         sqLiteDatabase.execSQL(CREATE_TABLE_USER);
         sqLiteDatabase.execSQL(CREATE_TABLE_TYPE_BOOK);
+        sqLiteDatabase.execSQL(CREATE_INVOICE_TABLE);
 
 
     }
@@ -37,6 +36,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Constant {
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_TYPE_BOOK);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + INVOICE_TABLE);
         onCreate(sqLiteDatabase);
 
     }
